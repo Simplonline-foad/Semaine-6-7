@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Mon CV</title>
-    <link rel="stylesheet" href="CSS/style.css" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css" type="text/css" /> <!--lien vers la feuille de style CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!--lien vers le CDN de Bootstrap-->
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.min.js"></script>  
-    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script> <!--lien vers le fichier jquery pour l'effet "hover"-->
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script> <!--lien vers fichier JQuery pour l'effet filtre-->
     
     <script type="text/javascript">
     $(function () {
@@ -17,8 +17,7 @@
         
             init: function () {
             
-                // MixItUp plugin
-                // http://mixitup.io
+                // Plugin Mixitup, qui permet de filtrer les vignettes par catégorie
                 $('#portfoliolist').mixitup({
                     targetSelector: '.portfolio',
                     filterSelector: '.filter',
@@ -32,7 +31,7 @@
             
             hoverEffect: function () {
             
-                // Simple parallax effect
+                // Fonction pour l'effet "hover"
                 $('#portfoliolist .portfolio').hover(
                     function () {
                         $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
@@ -48,7 +47,7 @@
 
         };
         
-        // Run the show!
+        // Lance les deux fonctions "hover" et "filtre"
         filterList.init();
         
         
@@ -99,7 +98,7 @@
         <div class="container">
 
             <h2>Mon portfolio</h2>
-
+            <!--data-filter permet de filtrer les vignettes par catégorie-->
             <ul id="filters" class="clearfix row">
                 <li><span class="filter active" data-filter="cat1 cat2 cat3 cat4">Toutes mes catégories</span></li>
                 <li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
@@ -108,7 +107,7 @@
                 <li><span class="filter" data-filter="cat4">Ruby</span></li>
             </ul>
 
-            <div id="portfoliolist">
+            <div id="portfoliolist"> <!--La div qui contient les vignettes des projets-->
                 
                 <div class="portfolio cat2" data-cat="cat2">
                     <div class="portfolio-wrapper">             
